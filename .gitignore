@@ -67,3 +67,20 @@ _SpecRunner.html
 # Ignore xlsx files generated during testing
 *.xlsx
 enpm-lock.yaml
+
+# misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.agents/
+.idea/
+.vscode
+!.vscode/extensions.json
+!.vscode/tasks.json
+.yarnrc
+.yarnrc.yml
+.yarn/
+.copilot-instructions.md
+.cursorrules
+.devcontainer/
