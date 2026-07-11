@@ -8,9 +8,9 @@ const expectations = [
     create() {
       return new CfIconExtXform();
     },
-    preparedModel: {iconSet: '3Triangles', iconId: 7},
+    preparedModel: { iconSet: '3Triangles', iconId: 7 },
     xml: '<x14:cfIcon iconSet="3Triangles" iconId="7" />',
-    parsedModel: {iconSet: '3Triangles', iconId: 7},
+    parsedModel: { iconSet: '3Triangles', iconId: 7 },
     tests: ['render', 'parse'],
   },
 ];

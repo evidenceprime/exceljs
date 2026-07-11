@@ -1,5 +1,5 @@
 const fs = require('fs');
-const {promisify} = require('util');
+const { promisify } = require('util');
 
 const ExcelJS = verquire('exceljs');
 
@@ -37,7 +37,7 @@ describe('Workbook', () => {
 
           return fsReadFileAsync(IMAGE_FILENAME);
         })
-        .then(imageData => {
+        .then((imageData) => {
           const backgroundId2 = ws2.getBackgroundImageId();
           const image = wb2.getImage(backgroundId2);
 
@@ -81,7 +81,7 @@ describe('Workbook', () => {
 
           return fsReadFileAsync(IMAGE_FILENAME);
         })
-        .then(imageData => {
+        .then((imageData) => {
           const images = ws2.getImages();
           expect(images.length).to.equal(1);
 
@@ -108,8 +108,8 @@ describe('Workbook', () => {
       });
 
       ws.addImage(imageId, {
-        tl: {col: 0.1125, row: 0.4},
-        br: {col: 2.101046875, row: 3.4},
+        tl: { col: 0.1125, row: 0.4 },
+        br: { col: 2.101046875, row: 3.4 },
         editAs: 'oneCell',
       });
 
@@ -125,7 +125,7 @@ describe('Workbook', () => {
 
           return fsReadFileAsync(IMAGE_FILENAME);
         })
-        .then(imageData => {
+        .then((imageData) => {
           const images = ws2.getImages();
           expect(images.length).to.equal(1);
 
@@ -149,8 +149,8 @@ describe('Workbook', () => {
       });
 
       ws.addImage(imageId, {
-        tl: {col: 0.1125, row: 0.4},
-        ext: {width: 100, height: 100},
+        tl: { col: 0.1125, row: 0.4 },
+        ext: { width: 100, height: 100 },
         editAs: 'oneCell',
       });
 
@@ -166,7 +166,7 @@ describe('Workbook', () => {
 
           return fsReadFileAsync(IMAGE_FILENAME);
         })
-        .then(imageData => {
+        .then((imageData) => {
           const images = ws2.getImages();
           expect(images.length).to.equal(1);
 
@@ -192,8 +192,8 @@ describe('Workbook', () => {
       });
 
       ws.addImage(imageId, {
-        tl: {col: 0.1125, row: 0.4},
-        ext: {width: 100, height: 100},
+        tl: { col: 0.1125, row: 0.4 },
+        ext: { width: 100, height: 100 },
         editAs: 'absolute',
         hyperlinks: {
           hyperlink: 'http://www.somewhere.com',
@@ -213,7 +213,7 @@ describe('Workbook', () => {
 
           return fsReadFileAsync(IMAGE_FILENAME);
         })
-        .then(imageData => {
+        .then((imageData) => {
           const images = ws2.getImages();
           expect(images.length).to.equal(1);
 
@@ -249,13 +249,13 @@ describe('Workbook', () => {
       });
 
       ws.addImage(imageId1, {
-        tl: {col: 0.1125, row: 0.4},
-        ext: {width: 100, height: 100},
+        tl: { col: 0.1125, row: 0.4 },
+        ext: { width: 100, height: 100 },
       });
 
       ws.addImage(imageId2, {
-        tl: {col: 0.1125, row: 0.4},
-        br: {col: 2.101046875, row: 3.4},
+        tl: { col: 0.1125, row: 0.4 },
+        br: { col: 2.101046875, row: 3.4 },
         editAs: 'oneCell',
       });
 
@@ -271,7 +271,7 @@ describe('Workbook', () => {
 
           return fsReadFileAsync(IMAGE_FILENAME);
         })
-        .then(imageData => {
+        .then((imageData) => {
           const images = ws2.getImages();
           expect(images.length).to.equal(2);
 

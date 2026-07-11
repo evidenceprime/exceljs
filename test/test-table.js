@@ -7,13 +7,9 @@ const wb = new Excel.Workbook();
 const ws = wb.addWorksheet('Foo');
 
 const now = new Date();
-const today = Date.UTC(
-  now.getUTCFullYear(),
-  now.getUTCMonth(),
-  now.getUTCDay()
-);
+const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDay());
 
-ws.columns = [{key: 'date', width: 32}, {key: 'number'}, {key: 'word'}];
+ws.columns = [{ key: 'date', width: 32 }, { key: 'number' }, { key: 'word' }];
 
 const words = [
   'Twas',
@@ -41,18 +37,18 @@ ws.addTable({
     showRowStripes: true,
   },
   columns: [
-    {name: 'Date', totalsRowLabel: 'Totally', filterButton: true},
+    { name: 'Date', totalsRowLabel: 'Totally', filterButton: true },
     {
       name: 'Id',
       totalsRowFunction: 'max',
       filterButton: true,
       totalsRowResult: 8,
-      style: {numFmt: '0.00%'},
+      style: { numFmt: '0.00%' },
     },
     {
       name: 'Word',
       filterButton: false,
-      style: {font: {bold: true, name: 'Comic Sans MS'}},
+      style: { font: { bold: true, name: 'Comic Sans MS' } },
     },
   ],
   rows: words.map((word, i) => {
@@ -70,6 +66,6 @@ wb.xlsx
     console.log('Done.');
     console.log('Time taken:', micros);
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(error.message);
   });

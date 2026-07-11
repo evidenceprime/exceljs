@@ -9,11 +9,11 @@ const relname = process.argv[4];
 const ws = new Worksheet();
 
 ws.columns = [
-  {header: 'Col 1', key: 'key', width: 25},
-  {header: 'Col 2', key: 'name', width: 25},
-  {header: 'Col 3', key: 'age'},
-  {header: 'Col 4', key: 'addr1', width: 8},
-  {header: 'Col 5', key: 'addr2', width: 10},
+  { header: 'Col 1', key: 'key', width: 25 },
+  { header: 'Col 2', key: 'name', width: 25 },
+  { header: 'Col 3', key: 'age' },
+  { header: 'Col 4', key: 'addr1', width: 8 },
+  { header: 'Col 5', key: 'addr2', width: 10 },
 ];
 
 ws.getCell('A2').value = 'Hello, World!';
@@ -23,7 +23,7 @@ ws.getCell('D1').value = 3.14;
 ws.getCell('C3').value = 'Boo!';
 
 ws.getCell('A4').value = 'merge 3x1';
-ws.getCell('B4').value = 'Won\'t see this';
+ws.getCell('B4').value = "Won't see this";
 ws.mergeCells('A4:C4');
 
 ws.getCell('B5').value = 'merge 3x3';

@@ -11,7 +11,7 @@ ws.getCell('B2').note = {
     {
       font: {
         size: 12,
-        color: {theme: 0},
+        color: { theme: 0 },
         name: 'Calibri',
         family: 2,
         scheme: 'minor',
@@ -22,7 +22,7 @@ ws.getCell('B2').note = {
       font: {
         italic: true,
         size: 12,
-        color: {theme: 0},
+        color: { theme: 0 },
         name: 'Calibri',
         scheme: 'minor',
       },
@@ -31,7 +31,7 @@ ws.getCell('B2').note = {
     {
       font: {
         size: 12,
-        color: {theme: 1},
+        color: { theme: 1 },
         name: 'Calibri',
         family: 2,
         scheme: 'minor',
@@ -41,7 +41,7 @@ ws.getCell('B2').note = {
     {
       font: {
         size: 12,
-        color: {argb: 'FFFF6600'},
+        color: { argb: 'FFFF6600' },
         name: 'Calibri',
         scheme: 'minor',
       },
@@ -50,7 +50,7 @@ ws.getCell('B2').note = {
     {
       font: {
         size: 12,
-        color: {theme: 1},
+        color: { theme: 1 },
         name: 'Calibri',
         family: 2,
         scheme: 'minor',
@@ -60,7 +60,7 @@ ws.getCell('B2').note = {
     {
       font: {
         size: 12,
-        color: {argb: 'FFCCFFCC'},
+        color: { argb: 'FFCCFFCC' },
         name: 'Calibri',
         scheme: 'minor',
       },
@@ -69,7 +69,7 @@ ws.getCell('B2').note = {
     {
       font: {
         size: 12,
-        color: {theme: 1},
+        color: { theme: 1 },
         name: 'Calibri',
         family: 2,
         scheme: 'minor',
@@ -80,7 +80,7 @@ ws.getCell('B2').note = {
       font: {
         bold: true,
         size: 12,
-        color: {theme: 1},
+        color: { theme: 1 },
         name: 'Calibri',
         family: 2,
         scheme: 'minor',
@@ -102,6 +102,6 @@ wb.xlsx
     console.log('Done.');
     console.log('Time taken:', micros);
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(error.message);
   });

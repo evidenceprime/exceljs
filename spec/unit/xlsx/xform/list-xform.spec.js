@@ -9,7 +9,7 @@ const expectations = [
     create() {
       return new ListXform({
         tag: 'ints',
-        childXform: new IntegerXform({tag: 'int', attr: 'val'}),
+        childXform: new IntegerXform({ tag: 'int', attr: 'val' }),
       });
     },
     preparedModel: [1, 2, 3],
@@ -25,7 +25,7 @@ const expectations = [
       return new ListXform({
         tag: 'ints',
         count: true,
-        childXform: new IntegerXform({tag: 'int', attr: 'val'}),
+        childXform: new IntegerXform({ tag: 'int', attr: 'val' }),
       });
     },
     preparedModel: [1, 2, 3],

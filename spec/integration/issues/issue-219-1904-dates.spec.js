@@ -11,9 +11,7 @@ describe('github issues', () => {
         expect(wb.properties.date1904).to.equal(true);
 
         const ws = wb.getWorksheet('Sheet1');
-        expect(ws.getCell('B4').value.toISOString()).to.equal(
-          '1904-01-01T00:00:00.000Z'
-        );
+        expect(ws.getCell('B4').value.toISOString()).to.equal('1904-01-01T00:00:00.000Z');
       });
     });
     it('Writing and Reading', () => {
@@ -27,13 +25,11 @@ describe('github issues', () => {
           const wb2 = new ExcelJS.Workbook();
           return wb2.xlsx.readFile(TEST_XLSX_FILE_NAME);
         })
-        .then(wb2 => {
+        .then((wb2) => {
           expect(wb2.properties.date1904).to.equal(true);
 
           const ws2 = wb2.getWorksheet('Sheet1');
-          expect(ws2.getCell('B4').value.toISOString()).to.equal(
-            '1904-01-01T00:00:00.000Z'
-          );
+          expect(ws2.getCell('B4').value.toISOString()).to.equal('1904-01-01T00:00:00.000Z');
         });
     });
   });

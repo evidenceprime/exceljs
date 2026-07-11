@@ -6,8 +6,8 @@ const ColumnSum = require('./utils/column-sum');
 
 const Excel = require('../excel');
 
-const {Workbook} = Excel;
-const {WorkbookReader} = Excel.stream.xlsx;
+const { Workbook } = Excel;
+const { WorkbookReader } = Excel.stream.xlsx;
 
 if (process.argv[2] === 'help') {
   console.log('Usage:');
@@ -89,15 +89,15 @@ if (useStream) {
     console.log('reached end of stream');
   });
   wb.on('finished', report);
-  wb.on('worksheet', worksheet => {
+  wb.on('worksheet', (worksheet) => {
     worksheet.on('row', checkRow);
   });
-  wb.on('hyperlinks', hyperlinks => {
+  wb.on('hyperlinks', (hyperlinks) => {
     hyperlinks.on('hyperlink', () => {
       hyperlinkCount++;
     });
   });
-  wb.on('entry', entry => {
+  wb.on('entry', (entry) => {
     console.log(JSON.stringify(entry));
   });
   switch (options.plan) {

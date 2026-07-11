@@ -8,7 +8,7 @@ const expectations = [
     create() {
       return new CfvoXform();
     },
-    preparedModel: {type: 'min'},
+    preparedModel: { type: 'min' },
     xml: '<cfvo type="min" />',
     get parsedModel() {
       return this.preparedModel;
@@ -20,7 +20,7 @@ const expectations = [
     create() {
       return new CfvoXform();
     },
-    preparedModel: {type: 'percent', value: 12.5},
+    preparedModel: { type: 'percent', value: 12.5 },
     xml: '<cfvo type="percent" val="12.5" />',
     get parsedModel() {
       return this.preparedModel;

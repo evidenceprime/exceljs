@@ -1,5 +1,5 @@
 const HrStopwatch = require('./utils/hr-stopwatch');
-const {Workbook} = require('../lib/exceljs.nodejs');
+const { Workbook } = require('../lib/exceljs.nodejs');
 
 const [, , filename] = process.argv;
 
@@ -24,6 +24,6 @@ wb.xlsx
     console.log('Done.');
     console.log('Time taken:', micros);
   })
-  .catch(error => {
+  .catch((error) => {
     console.error(error.stack);
   });

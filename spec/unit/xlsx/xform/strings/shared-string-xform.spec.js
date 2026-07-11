@@ -24,7 +24,7 @@ const expectations = [
           font: {
             size: 11,
             bold: true,
-            color: {theme: 1},
+            color: { theme: 1 },
             name: 'Calibri',
             family: 2,
             scheme: 'minor',
@@ -33,15 +33,14 @@ const expectations = [
         },
       ],
     },
-    xml:
-      '<si><r><rPr><b/><color theme="1"/><family val="2"/><scheme val="minor"/><sz val="11"/><rFont val="Calibri"/></rPr><t>Bold,</t></r></si>',
+    xml: '<si><r><rPr><b/><color theme="1"/><family val="2"/><scheme val="minor"/><sz val="11"/><rFont val="Calibri"/></rPr><t>Bold,</t></r></si>',
     parsedModel: {
       richText: [
         {
           font: {
             size: 11,
             bold: true,
-            color: {theme: 1},
+            color: { theme: 1 },
             name: 'Calibri',
             family: 2,
             scheme: 'minor',
@@ -71,10 +70,9 @@ const expectations = [
     },
     preparedModel: {
       text: 'Hello, World!',
-      phoneticText: {text: 'Helow woruld'},
+      phoneticText: { text: 'Helow woruld' },
     },
-    xml:
-      '<si><t>Hello, World!</t><rPh eb="0" sb="0"><t>Helow woruld</t></rPh></si>',
+    xml: '<si><t>Hello, World!</t><rPh eb="0" sb="0"><t>Helow woruld</t></rPh></si>',
     parsedModel: 'Hello, World!',
     tests: ['parse'],
   },
@@ -89,11 +87,10 @@ const expectations = [
         sb: 0,
         eb: 2,
         text: 'ヤクワリ',
-        properties: {fontId: 1},
+        properties: { fontId: 1 },
       },
     },
-    xml:
-      '<si><t>役割</t><rPh sb="0" eb="2"><t>ヤクワリ</t></rPh><phoneticPr fontId="1" /></si>',
+    xml: '<si><t>役割</t><rPh sb="0" eb="2"><t>ヤクワリ</t></rPh><phoneticPr fontId="1" /></si>',
     parsedModel: '役割',
     tests: ['parse'],
   },

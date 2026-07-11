@@ -8,7 +8,7 @@ const expectations = [
     create() {
       return new HyperlinkXform();
     },
-    preparedModel: {address: 'B6', rId: 'rId1'},
+    preparedModel: { address: 'B6', rId: 'rId1' },
     get parsedModel() {
       return this.preparedModel;
     },
@@ -20,7 +20,7 @@ const expectations = [
     create() {
       return new HyperlinkXform();
     },
-    preparedModel: {address: 'B6', rId: 'rId1', target: 'sheet1!B2'},
+    preparedModel: { address: 'B6', rId: 'rId1', target: 'sheet1!B2' },
     get parsedModel() {
       return this.preparedModel;
     },

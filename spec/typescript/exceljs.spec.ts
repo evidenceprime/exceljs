@@ -35,6 +35,6 @@ describe('typescript', () => {
         resolve();
       });
       stream.on('error', reject);
-    })
+    });
   });
 });

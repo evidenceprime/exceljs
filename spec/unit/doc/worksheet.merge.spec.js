@@ -58,7 +58,7 @@ describe('Worksheet', () => {
       const wb = new Excel.Workbook();
       const ws = wb.addWorksheet('blort');
 
-      const expectMaster = function(range, master) {
+      const expectMaster = function (range, master) {
         const d = new Dimensions(range);
         for (let i = d.top; i <= d.bottom; i++) {
           for (let j = d.left; j <= d.right; j++) {
@@ -148,72 +148,40 @@ describe('Worksheet', () => {
       // expecting styles to be copied (see worksheet spec)
       ws.mergeCells('B2:C3');
 
-      expect(ws.getCell('B2').font).to.deep.equal(
-        testUtils.styles.fonts.broadwayRedOutline20
-      );
-      expect(ws.getCell('B2').border).to.deep.equal(
-        testUtils.styles.borders.doubleRed
-      );
-      expect(ws.getCell('B2').fill).to.deep.equal(
-        testUtils.styles.fills.blueWhiteHGrad
-      );
+      expect(ws.getCell('B2').font).to.deep.equal(testUtils.styles.fonts.broadwayRedOutline20);
+      expect(ws.getCell('B2').border).to.deep.equal(testUtils.styles.borders.doubleRed);
+      expect(ws.getCell('B2').fill).to.deep.equal(testUtils.styles.fills.blueWhiteHGrad);
       expect(ws.getCell('B2').alignment).to.deep.equal(
-        testUtils.styles.namedAlignments.middleCentre
+        testUtils.styles.namedAlignments.middleCentre,
       );
-      expect(ws.getCell('B2').numFmt).to.deep.equal(
-        testUtils.styles.numFmts.numFmt1
-      );
+      expect(ws.getCell('B2').numFmt).to.deep.equal(testUtils.styles.numFmts.numFmt1);
 
-      expect(ws.getCell('B3').font).to.deep.equal(
-        testUtils.styles.fonts.broadwayRedOutline20
-      );
-      expect(ws.getCell('B3').border).to.deep.equal(
-        testUtils.styles.borders.doubleRed
-      );
-      expect(ws.getCell('B3').fill).to.deep.equal(
-        testUtils.styles.fills.blueWhiteHGrad
-      );
+      expect(ws.getCell('B3').font).to.deep.equal(testUtils.styles.fonts.broadwayRedOutline20);
+      expect(ws.getCell('B3').border).to.deep.equal(testUtils.styles.borders.doubleRed);
+      expect(ws.getCell('B3').fill).to.deep.equal(testUtils.styles.fills.blueWhiteHGrad);
       expect(ws.getCell('B3').alignment).to.deep.equal(
-        testUtils.styles.namedAlignments.middleCentre
+        testUtils.styles.namedAlignments.middleCentre,
       );
-      expect(ws.getCell('B3').numFmt).to.deep.equal(
-        testUtils.styles.numFmts.numFmt1
-      );
+      expect(ws.getCell('B3').numFmt).to.deep.equal(testUtils.styles.numFmts.numFmt1);
 
-      expect(ws.getCell('C2').font).to.deep.equal(
-        testUtils.styles.fonts.broadwayRedOutline20
-      );
-      expect(ws.getCell('C2').border).to.deep.equal(
-        testUtils.styles.borders.doubleRed
-      );
-      expect(ws.getCell('C2').fill).to.deep.equal(
-        testUtils.styles.fills.blueWhiteHGrad
-      );
+      expect(ws.getCell('C2').font).to.deep.equal(testUtils.styles.fonts.broadwayRedOutline20);
+      expect(ws.getCell('C2').border).to.deep.equal(testUtils.styles.borders.doubleRed);
+      expect(ws.getCell('C2').fill).to.deep.equal(testUtils.styles.fills.blueWhiteHGrad);
       expect(ws.getCell('C2').alignment).to.deep.equal(
-        testUtils.styles.namedAlignments.middleCentre
+        testUtils.styles.namedAlignments.middleCentre,
       );
-      expect(ws.getCell('C2').numFmt).to.deep.equal(
-        testUtils.styles.numFmts.numFmt1
-      );
+      expect(ws.getCell('C2').numFmt).to.deep.equal(testUtils.styles.numFmts.numFmt1);
 
-      expect(ws.getCell('C3').font).to.deep.equal(
-        testUtils.styles.fonts.broadwayRedOutline20
-      );
-      expect(ws.getCell('C3').border).to.deep.equal(
-        testUtils.styles.borders.doubleRed
-      );
-      expect(ws.getCell('C3').fill).to.deep.equal(
-        testUtils.styles.fills.blueWhiteHGrad
-      );
+      expect(ws.getCell('C3').font).to.deep.equal(testUtils.styles.fonts.broadwayRedOutline20);
+      expect(ws.getCell('C3').border).to.deep.equal(testUtils.styles.borders.doubleRed);
+      expect(ws.getCell('C3').fill).to.deep.equal(testUtils.styles.fills.blueWhiteHGrad);
       expect(ws.getCell('C3').alignment).to.deep.equal(
-        testUtils.styles.namedAlignments.middleCentre
+        testUtils.styles.namedAlignments.middleCentre,
       );
-      expect(ws.getCell('C3').numFmt).to.deep.equal(
-        testUtils.styles.numFmts.numFmt1
-      );
+      expect(ws.getCell('C3').numFmt).to.deep.equal(testUtils.styles.numFmts.numFmt1);
     });
 
-    it('preserves merges after row inserts', function() {
+    it('preserves merges after row inserts', function () {
       const wb = new Excel.Workbook();
       const ws = wb.addWorksheet('testMergeAfterInsert');
 
@@ -235,7 +203,7 @@ describe('Worksheet', () => {
       let nNumberVals = 0;
       let nMergeVals = 0;
       for (const cellVal of cellVals) {
-        const {name} = cellVal.constructor;
+        const { name } = cellVal.constructor;
         if (name === 'NumberValue') nNumberVals += 1;
         if (name === 'MergeValue' && cellVal.model.master === 'A2') {
           nMergeVals += 1;

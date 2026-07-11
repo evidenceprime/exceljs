@@ -4,8 +4,8 @@ const ColumnSum = require('./utils/column-sum');
 
 const Excel = require('../excel');
 
-const {Workbook} = Excel;
-const {WorkbookWriter} = Excel.stream.xlsx;
+const { Workbook } = Excel;
+const { WorkbookWriter } = Excel.stream.xlsx;
 
 if (process.argv[2] === 'help') {
   console.log('Usage:');
@@ -58,21 +58,21 @@ const fonts = {
 };
 
 ws.columns = [
-  {header: 'Col 1', key: 'key', width: 25},
-  {header: 'Col 2', key: 'name', width: 32},
-  {header: 'Col 3', key: 'age', width: 21},
-  {header: 'Col 4', key: 'addr1', width: 18},
-  {header: 'Col 5', key: 'addr2', width: 8},
-  {header: 'Col 6', key: 'num1', width: 8},
-  {header: 'Col 7', key: 'num2', width: 8},
+  { header: 'Col 1', key: 'key', width: 25 },
+  { header: 'Col 2', key: 'name', width: 32 },
+  { header: 'Col 3', key: 'age', width: 21 },
+  { header: 'Col 4', key: 'addr1', width: 18 },
+  { header: 'Col 5', key: 'addr2', width: 8 },
+  { header: 'Col 6', key: 'num1', width: 8 },
+  { header: 'Col 7', key: 'num2', width: 8 },
   {
     header: 'Col 8',
     key: 'num3',
     width: 32,
-    style: {font: fonts.comicSansUdB16},
+    style: { font: fonts.comicSansUdB16 },
   },
-  {header: 'Col 9', key: 'date', width: 12},
-  {header: 'Col 10', key: 'num4', width: 12},
+  { header: 'Col 9', key: 'date', width: 12 },
+  { header: 'Col 10', key: 'num4', width: 12 },
 ];
 
 const colCount = new ColumnSum([3, 6, 7, 8, 10]);
@@ -96,7 +96,7 @@ function addRow() {
     num1: utils.randomNum(10000),
     num2: utils.randomNum(100000),
     num3: utils.randomNum(1000000),
-    date: new Date(today + (iCount * 86400000)),
+    date: new Date(today + iCount * 86400000),
     num4: utils.randomNum(1000),
   });
   const lap = sw.span;
@@ -134,7 +134,7 @@ function allDone() {
       console.log(`Sums: ${colCount}`);
       console.log(`Time: ${stopwatch}`);
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error.message);
     });
 }

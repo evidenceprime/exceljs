@@ -12,12 +12,12 @@ const today = now - (now % 86400000);
 const getRows = () => {
   const rows = [];
   for (let i = 0; i < 20; i++) {
-    rows.push([new Date(today + (86400000 * i)), Math.random() * 10]);
+    rows.push([new Date(today + 86400000 * i), Math.random() * 10]);
   }
   return rows;
 };
 
-ws.columns = [{key: 'date', width: 16}, {key: 'number'}];
+ws.columns = [{ key: 'date', width: 16 }, { key: 'number' }];
 
 ws.addTable({
   name: 'TestTable',
@@ -29,7 +29,7 @@ ws.addTable({
     showRowStripes: true,
   },
   columns: [
-    {name: 'Date', totalsRowLabel: 'Max:', filterButton: true},
+    { name: 'Date', totalsRowLabel: 'Max:', filterButton: true },
     {
       name: 'Value',
       totalsRowFunction: 'max',
@@ -49,6 +49,6 @@ wb.xlsx
     console.log('Done.');
     console.log('Time taken:', micros);
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(error.message);
   });

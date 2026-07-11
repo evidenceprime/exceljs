@@ -1,20 +1,7 @@
 const Range = verquire('doc/range');
 
 describe('Range', () => {
-  function check(
-    d,
-    range,
-    $range,
-    tl,
-    $t$l,
-    br,
-    $b$r,
-    top,
-    left,
-    bottom,
-    right,
-    sheetName
-  ) {
+  function check(d, range, $range, tl, $t$l, br, $b$r, top, left, bottom, right, sheetName) {
     expect(d.range).to.equal(range);
     expect(d.$range).to.equal($range);
     expect(d.tl).to.equal(tl);
@@ -36,58 +23,10 @@ describe('Range', () => {
 
   it('constructs as expected', () => {
     // check range + rotations
-    check(
-      new Range('B5:D10'),
-      'B5:D10',
-      '$B$5:$D$10',
-      'B5',
-      '$B$5',
-      'D10',
-      '$D$10',
-      5,
-      2,
-      10,
-      4
-    );
-    check(
-      new Range('B10:D5'),
-      'B5:D10',
-      '$B$5:$D$10',
-      'B5',
-      '$B$5',
-      'D10',
-      '$D$10',
-      5,
-      2,
-      10,
-      4
-    );
-    check(
-      new Range('D5:B10'),
-      'B5:D10',
-      '$B$5:$D$10',
-      'B5',
-      '$B$5',
-      'D10',
-      '$D$10',
-      5,
-      2,
-      10,
-      4
-    );
-    check(
-      new Range('D10:B5'),
-      'B5:D10',
-      '$B$5:$D$10',
-      'B5',
-      '$B$5',
-      'D10',
-      '$D$10',
-      5,
-      2,
-      10,
-      4
-    );
+    check(new Range('B5:D10'), 'B5:D10', '$B$5:$D$10', 'B5', '$B$5', 'D10', '$D$10', 5, 2, 10, 4);
+    check(new Range('B10:D5'), 'B5:D10', '$B$5:$D$10', 'B5', '$B$5', 'D10', '$D$10', 5, 2, 10, 4);
+    check(new Range('D5:B10'), 'B5:D10', '$B$5:$D$10', 'B5', '$B$5', 'D10', '$D$10', 5, 2, 10, 4);
+    check(new Range('D10:B5'), 'B5:D10', '$B$5:$D$10', 'B5', '$B$5', 'D10', '$D$10', 5, 2, 10, 4);
 
     check(
       new Range('G7', 'C16'),
@@ -100,7 +39,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
     check(
       new Range('C7', 'G16'),
@@ -113,7 +52,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
     check(
       new Range('C16', 'G7'),
@@ -126,7 +65,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
     check(
       new Range('G16', 'C7'),
@@ -139,7 +78,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
 
     check(
@@ -153,7 +92,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
     check(
       new Range(16, 3, 7, 7),
@@ -166,7 +105,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
     check(
       new Range(7, 7, 16, 3),
@@ -179,7 +118,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
     check(
       new Range(16, 7, 7, 3),
@@ -192,7 +131,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
 
     check(
@@ -206,7 +145,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
     check(
       new Range([16, 3, 7, 7]),
@@ -219,7 +158,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
     check(
       new Range([7, 7, 16, 3]),
@@ -232,7 +171,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
     check(
       new Range([16, 7, 7, 3]),
@@ -245,7 +184,7 @@ describe('Range', () => {
       7,
       3,
       16,
-      7
+      7,
     );
 
     check(
@@ -259,7 +198,7 @@ describe('Range', () => {
       5,
       2,
       10,
-      4
+      4,
     );
     check(
       new Range('blort!$B$5:$D$10'),
@@ -273,7 +212,7 @@ describe('Range', () => {
       2,
       10,
       4,
-      'blort'
+      'blort',
     );
   });
 
@@ -291,7 +230,7 @@ describe('Range', () => {
     expect(d.toString()).to.equal('A1:C3');
   });
 
-  it('doesn\'t always include the default row/col', () => {
+  it("doesn't always include the default row/col", () => {
     const d = new Range();
 
     d.expand(2, 2, 4, 4);
