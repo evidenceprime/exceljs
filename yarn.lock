@@ -1271,7 +1271,6 @@ __metadata:
     regenerator-runtime: "npm:0.13.11"
     sax: "npm:1.6.0"
     saxes: "npm:5.0.1"
-    tmp: "npm:0.2.7"
     ts-node: "npm:8.10.2"
     typescript: "npm:3.9.10"
     unzipper: "npm:0.12.5"
@@ -9075,13 +9074,6 @@ __metadata:
     fdir: "npm:^6.5.0"
     picomatch: "npm:^4.0.4"
   checksum: 10c0/7f7bb0f197c88bc4b20c231e0deca4240ca3bf313a88f5a7fee93a872b84966a4d50220947c0455ad07a60b3b360961c5b7fd979222aeb716a9f99b412002e4c
-  languageName: node
-  linkType: hard
-
-"tmp@npm:0.2.7":
-  version: 0.2.7
-  resolution: "tmp@npm:0.2.7"
-  checksum: 10c0/59eb55584f2f07210d3231b6a1f6b5c2b9794d8a7b509c8ee867ed2acad6d2245ee2448b7937b676ffbff3155a70077edde8a69f9d7cf0f90c86a62e8910c357
   languageName: node
   linkType: hard
 
