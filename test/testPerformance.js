@@ -5,8 +5,8 @@ const HrStopwatch = require('./utils/hr-stopwatch');
 
 const Excel = require('../excel');
 
-const {Workbook} = Excel;
-const {WorkbookWriter} = Excel.stream.xlsx;
+const { Workbook } = Excel;
+const { WorkbookWriter } = Excel.stream.xlsx;
 
 if (process.argv[2] === 'help') {
   console.log('Usage:');
@@ -19,18 +19,18 @@ const resultFilename = process.argv[2];
 const testFilename = process.argv[3];
 const sleepTime = 10000;
 
-const resultBook = new WorkbookWriter({filename: resultFilename});
+const resultBook = new WorkbookWriter({ filename: resultFilename });
 const resultSheet = resultBook.addWorksheet('results');
 resultSheet.columns = [
-  {header: 'Count', key: 'count'},
-  {header: 'DocSS', key: 'dss'},
-  {header: 'DocSO', key: 'dso'},
-  {header: 'DocPS', key: 'dps'},
-  {header: 'DocPO', key: 'dpo'},
-  {header: 'StmSS', key: 'sss'},
-  {header: 'StmSO', key: 'sso'},
-  {header: 'StmPS', key: 'sps'},
-  {header: 'StmPO', key: 'spo'},
+  { header: 'Count', key: 'count' },
+  { header: 'DocSS', key: 'dss' },
+  { header: 'DocSO', key: 'dso' },
+  { header: 'DocPS', key: 'dps' },
+  { header: 'DocPO', key: 'dpo' },
+  { header: 'StmSS', key: 'sss' },
+  { header: 'StmSO', key: 'sso' },
+  { header: 'StmPS', key: 'sps' },
+  { header: 'StmPO', key: 'spo' },
 ];
 
 // =========================================================================
@@ -38,8 +38,7 @@ resultSheet.columns = [
 function randomName(length) {
   length = length || 5;
   const text = [];
-  const possible =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
   for (let i = 0; i < length; i++)
     text.push(possible.charAt(Math.floor(Math.random() * possible.length)));
@@ -87,33 +86,28 @@ function reduceResults(times) {
 }
 
 function execute(options) {
-  console.log(
-    `Test Run ${options.workbook}, ${options.style}, ${options.str}, ${options.count}`
-  );
+  console.log(`Test Run ${options.workbook}, ${options.style}, ${options.str}, ${options.count}`);
 
   const wbOptions = {
     filename: testFilename,
     useStyles: options.style === 'styled',
     useSharedStrings: options.str === 'shared',
   };
-  const wb =
-    options.workbook === 'doc'
-      ? new Workbook(wbOptions)
-      : new WorkbookWriter(wbOptions);
+  const wb = options.workbook === 'doc' ? new Workbook(wbOptions) : new WorkbookWriter(wbOptions);
   const ws = wb.addWorksheet('data');
   ws.columns = [
-    {header: 'Col 1', key: 'key', width: 25},
-    {header: 'Col 2', key: 'name', width: 32},
-    {header: 'Col 3', key: 'age', width: 21},
-    {header: 'Col 4', key: 'addr1', width: 18},
-    {header: 'Col 5', key: 'addr2', width: 8},
-    {header: 'Col 6', key: 'num1', width: 8},
-    {header: 'Col 7', key: 'num2', width: 8},
+    { header: 'Col 1', key: 'key', width: 25 },
+    { header: 'Col 2', key: 'name', width: 32 },
+    { header: 'Col 3', key: 'age', width: 21 },
+    { header: 'Col 4', key: 'addr1', width: 18 },
+    { header: 'Col 5', key: 'addr2', width: 8 },
+    { header: 'Col 6', key: 'num1', width: 8 },
+    { header: 'Col 7', key: 'num2', width: 8 },
     {
       header: 'Col 8',
       key: 'num3',
       width: 32,
-      style: {font: fonts.comicSansUdB16},
+      style: { font: fonts.comicSansUdB16 },
     },
   ];
   for (let i = 0; i < options.count; i++) {
@@ -149,14 +143,14 @@ function runTest(options) {
 }
 
 function runTests(options) {
-  return function() {
+  return function () {
     const results = [];
     let promise = Promise.resolve();
     for (let pass = 0; pass < passes; pass++) {
       // run each test with a 10 second pause between (to let GC do its stuff)
       promise = promise.then(() =>
         runTest(options)
-          .then(result => {
+          .then((result) => {
             results.push(result);
           })
           .delay(sleepTime)
@@ -167,7 +161,7 @@ function runTests(options) {
               console.error(`Error deleting file:${ex.message}`);
             }
           })
-          .delay(1000)
+          .delay(1000),
       );
     }
     return promise.then(() => {
@@ -180,20 +174,20 @@ function runTests(options) {
 
 let mainPromise = Promise.resolve();
 // var mainPromise = execute(125, 'stream', 'plain', 'own');
-_.each(counts, count => {
+_.each(counts, (count) => {
   mainPromise = mainPromise.then(() => {
     resultSheet.addRow().getCell('count').value = count;
   });
-  _.each(workbooks, workbook => {
-    _.each(styles, style => {
-      _.each(strings, str => {
+  _.each(workbooks, (workbook) => {
+    _.each(styles, (style) => {
+      _.each(strings, (str) => {
         mainPromise = mainPromise.then(
           runTests({
             count,
             workbook,
             style,
             str,
-          })
+          }),
         );
       });
     });
@@ -208,7 +202,7 @@ mainPromise = mainPromise
   .then(() => {
     console.log('All Done');
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(error.message);
   });
 

@@ -18,7 +18,7 @@ const expectations = [
     create() {
       return new AutoFilterXform();
     },
-    preparedModel: {from: {row: 1, column: 1}, to: {row: 1, column: 3}},
+    preparedModel: { from: { row: 1, column: 1 }, to: { row: 1, column: 3 } },
     xml: '<autoFilter ref="A1:C1"/>',
     tests: ['render', 'renderIn'],
   },
@@ -27,7 +27,7 @@ const expectations = [
     create() {
       return new AutoFilterXform();
     },
-    preparedModel: {from: 'A1', to: 'C1'},
+    preparedModel: { from: 'A1', to: 'C1' },
     xml: '<autoFilter ref="A1:C1"/>',
     tests: ['render', 'renderIn'],
   },

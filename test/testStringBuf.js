@@ -9,10 +9,10 @@ function testWrite(results) {
   const a = [];
 
   function test(size) {
-    return function() {
+    return function () {
       console.log(`Write: ${size}`);
       const text = utils.randomName(size);
-      const sb = new StringBuf({size: SIZE + 10});
+      const sb = new StringBuf({ size: SIZE + 10 });
       const sw = new HrStopwatch();
       sw.start();
       while (sb.length < SIZE) {
@@ -48,10 +48,10 @@ function testGrow(results) {
   const a = [];
 
   function test(size) {
-    return function() {
+    return function () {
       console.log(`Grow: ${size}`);
       const text = utils.randomName(size);
-      const sb = new StringBuf({size: 8});
+      const sb = new StringBuf({ size: 8 });
       const sw = new HrStopwatch();
       sw.start();
       while (sb.length < SIZE) {
@@ -87,6 +87,6 @@ const results = {};
 Promise.resolve(results)
   .then(testWrite)
   .then(testGrow)
-  .then(r => {
+  .then((r) => {
     console.log(JSON.stringify(r, null, '  '));
   });

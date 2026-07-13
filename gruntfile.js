@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-terser');
@@ -114,9 +114,9 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         files: [
-          {expand: true, src: ['**'], cwd: './build/lib', dest: './dist/es5'},
-          {src: './build/lib/exceljs.nodejs.js', dest: './dist/es5/index.js'},
-          {src: './LICENSE', dest: './dist/LICENSE'},
+          { expand: true, src: ['**'], cwd: './build/lib', dest: './dist/es5' },
+          { src: './build/lib/exceljs.nodejs.js', dest: './dist/es5/index.js' },
+          { src: './LICENSE', dest: './dist/LICENSE' },
         ],
       },
     },

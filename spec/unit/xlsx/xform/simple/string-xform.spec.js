@@ -6,7 +6,7 @@ const expectations = [
   {
     title: 'hello',
     create() {
-      return new StringXform({tag: 'string', attr: 'val'});
+      return new StringXform({ tag: 'string', attr: 'val' });
     },
     preparedModel: 'Hello, World!',
     xml: '<string val="Hello, World!"/>',
@@ -16,7 +16,7 @@ const expectations = [
   {
     title: 'empty',
     create() {
-      return new StringXform({tag: 'string', attr: 'val'});
+      return new StringXform({ tag: 'string', attr: 'val' });
     },
     preparedModel: '',
     xml: '<string val=""/>',
@@ -26,7 +26,7 @@ const expectations = [
   {
     title: 'undefined',
     create() {
-      return new StringXform({tag: 'string', attr: 'val'});
+      return new StringXform({ tag: 'string', attr: 'val' });
     },
     preparedModel: undefined,
     xml: '',

@@ -1,8 +1,6 @@
 const testXformHelper = require('../test-xform-helper');
 
-const PageSetupPropertiesXform = verquire(
-  'xlsx/xform/sheet/page-setup-properties-xform'
-);
+const PageSetupPropertiesXform = verquire('xlsx/xform/sheet/page-setup-properties-xform');
 
 const expectations = [
   {
@@ -10,9 +8,9 @@ const expectations = [
     create() {
       return new PageSetupPropertiesXform();
     },
-    preparedModel: {fitToPage: true},
+    preparedModel: { fitToPage: true },
     xml: '<pageSetUpPr fitToPage="1"/>',
-    parsedModel: {fitToPage: true},
+    parsedModel: { fitToPage: true },
     tests: ['render', 'renderIn', 'parse'],
   },
 ];

@@ -58,9 +58,9 @@ const expectations = [
     create() {
       return new CfRuleXform();
     },
-    preparedModel: {type: 'top10', dxfId: 1, priority: 1, rank: 10},
+    preparedModel: { type: 'top10', dxfId: 1, priority: 1, rank: 10 },
     xml: '<cfRule type="top10" dxfId="1" priority="1" rank="10" />',
-    parsedModel: {type: 'top10', dxfId: 1, priority: 1, rank: 10},
+    parsedModel: { type: 'top10', dxfId: 1, priority: 1, rank: 10 },
     tests: ['render', 'parse'],
   },
   {
@@ -98,7 +98,7 @@ const expectations = [
       bottom: true,
     },
     xml: '<cfRule type="top10" dxfId="1" priority="1" rank="10" bottom="1" />',
-    parsedModel: {type: 'top10', dxfId: 1, priority: 1, rank: 10, bottom: true},
+    parsedModel: { type: 'top10', dxfId: 1, priority: 1, rank: 10, bottom: true },
     tests: ['render', 'parse'],
   },
   {
@@ -106,9 +106,9 @@ const expectations = [
     create() {
       return new CfRuleXform();
     },
-    preparedModel: {type: 'aboveAverage', dxfId: 1, priority: 1},
+    preparedModel: { type: 'aboveAverage', dxfId: 1, priority: 1 },
     xml: '<cfRule type="aboveAverage" dxfId="1" priority="1" />',
-    parsedModel: {type: 'aboveAverage', dxfId: 1, priority: 1},
+    parsedModel: { type: 'aboveAverage', dxfId: 1, priority: 1 },
     tests: ['render', 'parse'],
   },
   {
@@ -122,8 +122,7 @@ const expectations = [
       priority: 1,
       aboveAverage: false,
     },
-    xml:
-      '<cfRule type="aboveAverage" dxfId="1" priority="1" aboveAverage="0" />',
+    xml: '<cfRule type="aboveAverage" dxfId="1" priority="1" aboveAverage="0" />',
     parsedModel: {
       type: 'aboveAverage',
       dxfId: 1,
@@ -140,8 +139,8 @@ const expectations = [
     preparedModel: {
       type: 'colorScale',
       priority: 1,
-      cfvo: [{type: 'min'}, {type: 'percentile', value: 50}, {type: 'max'}],
-      color: [{argb: 'FFFF0000'}, {argb: 'FF00FF00'}, {argb: 'FF0000FF'}],
+      cfvo: [{ type: 'min' }, { type: 'percentile', value: 50 }, { type: 'max' }],
+      color: [{ argb: 'FFFF0000' }, { argb: 'FF00FF00' }, { argb: 'FF0000FF' }],
     },
     xml: `
       <cfRule type="colorScale" priority="1">
@@ -170,10 +169,10 @@ const expectations = [
       iconSet: '4Arrows',
       priority: 1,
       cfvo: [
-        {type: 'percent', value: 0},
-        {type: 'percent', value: 25},
-        {type: 'percent', value: 50},
-        {type: 'percent', value: 75},
+        { type: 'percent', value: 0 },
+        { type: 'percent', value: 25 },
+        { type: 'percent', value: 50 },
+        { type: 'percent', value: 75 },
       ],
     },
     xml: `

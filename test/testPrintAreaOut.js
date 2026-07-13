@@ -1,6 +1,6 @@
 const Excel = require('../excel');
 
-const {Workbook} = Excel;
+const { Workbook } = Excel;
 
 const [, , filename] = process.argv;
 
@@ -35,6 +35,6 @@ wb.xlsx
   .then(() => {
     console.log('Done.');
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(error.message);
   });

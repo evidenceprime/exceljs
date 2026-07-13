@@ -10,18 +10,14 @@ const expectations = [
     },
     initialModel: {
       autoFilterRef: 'A1:B10',
-      columns: [
-        {filterButton: false},
-        {filterButton: true},
-        {filterButton: true},
-      ],
+      columns: [{ filterButton: false }, { filterButton: true }, { filterButton: true }],
     },
     preparedModel: {
       autoFilterRef: 'A1:B10',
       columns: [
-        {colId: '0', filterButton: false},
-        {colId: '1', filterButton: true},
-        {colId: '2', filterButton: true},
+        { colId: '0', filterButton: false },
+        { colId: '1', filterButton: true },
+        { colId: '2', filterButton: true },
       ],
     },
     xml:

@@ -13,7 +13,7 @@ const expectations = [
   {
     title: 'Top Left',
     create: () => new AlignmentXform(),
-    preparedModel: {horizontal: 'left', vertical: 'top'},
+    preparedModel: { horizontal: 'left', vertical: 'top' },
     xml: '<alignment horizontal="left" vertical="top"/>',
     get parsedModel() {
       return this.preparedModel;
@@ -23,7 +23,7 @@ const expectations = [
   {
     title: 'Middle Centre',
     create: () => new AlignmentXform(),
-    preparedModel: {horizontal: 'center', vertical: 'middle'},
+    preparedModel: { horizontal: 'center', vertical: 'middle' },
     xml: '<alignment horizontal="center" vertical="center"/>',
     get parsedModel() {
       return this.preparedModel;
@@ -33,7 +33,7 @@ const expectations = [
   {
     title: 'Bottom Right',
     create: () => new AlignmentXform(),
-    preparedModel: {horizontal: 'right', vertical: 'bottom'},
+    preparedModel: { horizontal: 'right', vertical: 'bottom' },
     xml: '<alignment horizontal="right" vertical="bottom"/>',
     get parsedModel() {
       return this.preparedModel;
@@ -43,7 +43,7 @@ const expectations = [
   {
     title: 'Wrap Text',
     create: () => new AlignmentXform(),
-    preparedModel: {wrapText: true},
+    preparedModel: { wrapText: true },
     xml: '<alignment wrapText="1"/>',
     get parsedModel() {
       return this.preparedModel;
@@ -53,7 +53,7 @@ const expectations = [
   {
     title: 'Indent 1',
     create: () => new AlignmentXform(),
-    preparedModel: {indent: 1},
+    preparedModel: { indent: 1 },
     xml: '<alignment indent="1"/>',
     get parsedModel() {
       return this.preparedModel;
@@ -63,7 +63,7 @@ const expectations = [
   {
     title: 'Indent 2',
     create: () => new AlignmentXform(),
-    preparedModel: {indent: 2},
+    preparedModel: { indent: 2 },
     xml: '<alignment indent="2"/>',
     get parsedModel() {
       return this.preparedModel;
@@ -241,7 +241,7 @@ const expectations = [
   {
     title: 'Reading Order [Left To Right]',
     create: () => new AlignmentXform(),
-    preparedModel: {readingOrder: 'ltr'},
+    preparedModel: { readingOrder: 'ltr' },
     xml: '<alignment readingOrder="1"/>',
     get parsedModel() {
       return this.preparedModel;
@@ -251,7 +251,7 @@ const expectations = [
   {
     title: 'Reading Order [Right To Left]',
     create: () => new AlignmentXform(),
-    preparedModel: {readingOrder: 'rtl'},
+    preparedModel: { readingOrder: 'rtl' },
     xml: '<alignment readingOrder="2"/>',
     get parsedModel() {
       return this.preparedModel;

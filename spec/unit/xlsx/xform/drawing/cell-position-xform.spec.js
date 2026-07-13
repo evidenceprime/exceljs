@@ -6,7 +6,7 @@ const expectations = [
   {
     title: 'integers',
     create() {
-      return new CellPositionXform({tag: 'xdr:from'});
+      return new CellPositionXform({ tag: 'xdr:from' });
     },
     preparedModel: {
       nativeRow: 5,
@@ -14,8 +14,7 @@ const expectations = [
       nativeCol: 7,
       nativeColOff: 0,
     },
-    xml:
-      '<xdr:from><xdr:col>7</xdr:col><xdr:colOff>0</xdr:colOff><xdr:row>5</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:from>',
+    xml: '<xdr:from><xdr:col>7</xdr:col><xdr:colOff>0</xdr:colOff><xdr:row>5</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:from>',
     parsedModel: {
       nativeRow: 5,
       nativeRowOff: 0,
@@ -27,7 +26,7 @@ const expectations = [
   {
     title: 'halves',
     create() {
-      return new CellPositionXform({tag: 'xdr:to'});
+      return new CellPositionXform({ tag: 'xdr:to' });
     },
     preparedModel: {
       nativeRow: 5,
@@ -35,8 +34,7 @@ const expectations = [
       nativeCol: 7,
       nativeColOff: 320000,
     },
-    xml:
-      '<xdr:to><xdr:col>7</xdr:col><xdr:colOff>320000</xdr:colOff><xdr:row>5</xdr:row><xdr:rowOff>90000</xdr:rowOff></xdr:to>',
+    xml: '<xdr:to><xdr:col>7</xdr:col><xdr:colOff>320000</xdr:colOff><xdr:row>5</xdr:row><xdr:rowOff>90000</xdr:rowOff></xdr:to>',
     parsedModel: {
       nativeRow: 5,
       nativeRowOff: 90000,

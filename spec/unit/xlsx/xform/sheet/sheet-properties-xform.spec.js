@@ -1,8 +1,6 @@
 const testXformHelper = require('../test-xform-helper');
 
-const SheetPropertiesXform = verquire(
-  'xlsx/xform/sheet/sheet-properties-xform'
-);
+const SheetPropertiesXform = verquire('xlsx/xform/sheet/sheet-properties-xform');
 
 const expectations = [
   {
@@ -20,9 +18,9 @@ const expectations = [
     create() {
       return new SheetPropertiesXform();
     },
-    preparedModel: {tabColor: {argb: 'FFFF0000'}},
+    preparedModel: { tabColor: { argb: 'FFFF0000' } },
     xml: '<sheetPr><tabColor rgb="FFFF0000"/></sheetPr>',
-    parsedModel: {tabColor: {argb: 'FFFF0000'}},
+    parsedModel: { tabColor: { argb: 'FFFF0000' } },
     tests: ['render', 'renderIn', 'parse'],
   },
   {
@@ -30,9 +28,9 @@ const expectations = [
     create() {
       return new SheetPropertiesXform();
     },
-    preparedModel: {pageSetup: {fitToPage: true}},
+    preparedModel: { pageSetup: { fitToPage: true } },
     xml: '<sheetPr><pageSetUpPr fitToPage="1"/></sheetPr>',
-    parsedModel: {pageSetup: {fitToPage: true}},
+    parsedModel: { pageSetup: { fitToPage: true } },
     tests: ['render', 'renderIn', 'parse'],
   },
   {
@@ -40,9 +38,9 @@ const expectations = [
     create() {
       return new SheetPropertiesXform();
     },
-    preparedModel: {outlineProperties: {summaryBelow: false}},
+    preparedModel: { outlineProperties: { summaryBelow: false } },
     xml: '<sheetPr><outlinePr summaryBelow="0"/></sheetPr>',
-    parsedModel: {outlineProperties: {summaryBelow: false}},
+    parsedModel: { outlineProperties: { summaryBelow: false } },
     tests: ['render', 'renderIn', 'parse'],
   },
   {
@@ -51,14 +49,13 @@ const expectations = [
       return new SheetPropertiesXform();
     },
     preparedModel: {
-      tabColor: {argb: 'FFFF0000'},
-      pageSetup: {fitToPage: true},
+      tabColor: { argb: 'FFFF0000' },
+      pageSetup: { fitToPage: true },
     },
-    xml:
-      '<sheetPr><tabColor rgb="FFFF0000"/><pageSetUpPr fitToPage="1"/></sheetPr>',
+    xml: '<sheetPr><tabColor rgb="FFFF0000"/><pageSetUpPr fitToPage="1"/></sheetPr>',
     parsedModel: {
-      tabColor: {argb: 'FFFF0000'},
-      pageSetup: {fitToPage: true},
+      tabColor: { argb: 'FFFF0000' },
+      pageSetup: { fitToPage: true },
     },
     tests: ['render', 'renderIn', 'parse'],
   },
@@ -68,14 +65,13 @@ const expectations = [
       return new SheetPropertiesXform();
     },
     preparedModel: {
-      tabColor: {argb: 'FFFF0000'},
-      outlineProperties: {summaryBelow: false},
+      tabColor: { argb: 'FFFF0000' },
+      outlineProperties: { summaryBelow: false },
     },
-    xml:
-      '<sheetPr><tabColor rgb="FFFF0000"/><outlinePr summaryBelow="0"/></sheetPr>',
+    xml: '<sheetPr><tabColor rgb="FFFF0000"/><outlinePr summaryBelow="0"/></sheetPr>',
     parsedModel: {
-      tabColor: {argb: 'FFFF0000'},
-      outlineProperties: {summaryBelow: false},
+      tabColor: { argb: 'FFFF0000' },
+      outlineProperties: { summaryBelow: false },
     },
     tests: ['render', 'renderIn', 'parse'],
   },
@@ -85,14 +81,13 @@ const expectations = [
       return new SheetPropertiesXform();
     },
     preparedModel: {
-      pageSetup: {fitToPage: true},
-      outlineProperties: {summaryBelow: false},
+      pageSetup: { fitToPage: true },
+      outlineProperties: { summaryBelow: false },
     },
-    xml:
-      '<sheetPr><pageSetUpPr fitToPage="1"/><outlinePr summaryBelow="0"/></sheetPr>',
+    xml: '<sheetPr><pageSetUpPr fitToPage="1"/><outlinePr summaryBelow="0"/></sheetPr>',
     parsedModel: {
-      pageSetup: {fitToPage: true},
-      outlineProperties: {summaryBelow: false},
+      pageSetup: { fitToPage: true },
+      outlineProperties: { summaryBelow: false },
     },
     tests: ['render', 'renderIn', 'parse'],
   },
@@ -102,16 +97,15 @@ const expectations = [
       return new SheetPropertiesXform();
     },
     preparedModel: {
-      tabColor: {argb: 'FFFF0000'},
-      outlineProperties: {summaryBelow: false},
-      pageSetup: {fitToPage: true},
+      tabColor: { argb: 'FFFF0000' },
+      outlineProperties: { summaryBelow: false },
+      pageSetup: { fitToPage: true },
     },
-    xml:
-      '<sheetPr><tabColor rgb="FFFF0000"/><outlinePr summaryBelow="0"/><pageSetUpPr fitToPage="1"/></sheetPr>',
+    xml: '<sheetPr><tabColor rgb="FFFF0000"/><outlinePr summaryBelow="0"/><pageSetUpPr fitToPage="1"/></sheetPr>',
     parsedModel: {
-      tabColor: {argb: 'FFFF0000'},
-      outlineProperties: {summaryBelow: false},
-      pageSetup: {fitToPage: true},
+      tabColor: { argb: 'FFFF0000' },
+      outlineProperties: { summaryBelow: false },
+      pageSetup: { fitToPage: true },
     },
     tests: ['render', 'renderIn', 'parse'],
   },

@@ -43,7 +43,7 @@ const _ = Object.assign(
       return clone;
     },
   },
-  verquire('utils/under-dash')
+  verquire('utils/under-dash'),
 );
 
 module.exports = _;

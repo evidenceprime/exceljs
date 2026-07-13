@@ -6,7 +6,7 @@ const expectations = [
   {
     title: 'five',
     create() {
-      return new FloatXform({tag: 'float', attr: 'val'});
+      return new FloatXform({ tag: 'float', attr: 'val' });
     },
     preparedModel: 5,
     xml: '<float val="5"/>',
@@ -16,7 +16,7 @@ const expectations = [
   {
     title: 'pi',
     create() {
-      return new FloatXform({tag: 'float', attr: 'val'});
+      return new FloatXform({ tag: 'float', attr: 'val' });
     },
     preparedModel: 3.14,
     xml: '<float val="3.14"/>',
@@ -26,7 +26,7 @@ const expectations = [
   {
     title: 'zero',
     create() {
-      return new FloatXform({tag: 'float', attr: 'val'});
+      return new FloatXform({ tag: 'float', attr: 'val' });
     },
     preparedModel: 0,
     xml: '<float val="0"/>',
@@ -36,7 +36,7 @@ const expectations = [
   {
     title: 'undefined',
     create() {
-      return new FloatXform({tag: 'float', attr: 'val'});
+      return new FloatXform({ tag: 'float', attr: 'val' });
     },
     preparedModel: undefined,
     xml: '',

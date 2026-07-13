@@ -9,8 +9,7 @@ const expectations = [
       return new WorkbookViewXform();
     },
     preparedModel: {},
-    xml:
-      '<workbookView xWindow="0" yWindow="0" windowWidth="12000" windowHeight="24000"/>',
+    xml: '<workbookView xWindow="0" yWindow="0" windowWidth="12000" windowHeight="24000"/>',
     parsedModel: {
       x: 0,
       y: 0,
@@ -25,9 +24,8 @@ const expectations = [
     create() {
       return new WorkbookViewXform();
     },
-    preparedModel: {visibility: 'hidden'},
-    xml:
-      '<workbookView visibility="hidden" xWindow="0" yWindow="0" windowWidth="12000" windowHeight="24000"/>',
+    preparedModel: { visibility: 'hidden' },
+    xml: '<workbookView visibility="hidden" xWindow="0" yWindow="0" windowWidth="12000" windowHeight="24000"/>',
     parsedModel: {
       visibility: 'hidden',
       x: 0,
@@ -42,9 +40,8 @@ const expectations = [
     create() {
       return new WorkbookViewXform();
     },
-    preparedModel: {activeTab: 2, firstSheet: 3},
-    xml:
-      '<workbookView xWindow="0" yWindow="0" windowWidth="12000" windowHeight="24000" activeTab="2" firstSheet="3"/>',
+    preparedModel: { activeTab: 2, firstSheet: 3 },
+    xml: '<workbookView xWindow="0" yWindow="0" windowWidth="12000" windowHeight="24000" activeTab="2" firstSheet="3"/>',
     parsedModel: {
       visibility: 'visible',
       x: 0,

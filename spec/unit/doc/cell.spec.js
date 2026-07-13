@@ -78,7 +78,7 @@ const fonts = {
     family: 5,
     size: 20,
     outline: true,
-    color: {argb: 'FFFF0000'},
+    color: { argb: 'FFFF0000' },
   },
 };
 
@@ -111,15 +111,15 @@ describe('Cell', () => {
     expect(a1.value).to.equal(dateValue);
     expect(a1.type).to.equal(Enums.ValueType.Date);
 
-    let formulaValue = {formula: 'A2', result: 5};
+    let formulaValue = { formula: 'A2', result: 5 };
     expect((a1.value = formulaValue)).to.deep.equal(formulaValue);
     expect(a1.value).to.deep.equal(formulaValue);
     expect(a1.type).to.equal(Enums.ValueType.Formula);
 
     // no result
-    formulaValue = {formula: 'A3'};
+    formulaValue = { formula: 'A3' };
     expect((a1.value = formulaValue)).to.deep.equal(formulaValue);
-    expect(a1.value).to.deep.equal({formula: 'A3'});
+    expect(a1.value).to.deep.equal({ formula: 'A3' });
     expect(a1.type).to.equal(Enums.ValueType.Formula);
 
     const hyperlinkValue = {
@@ -133,7 +133,7 @@ describe('Cell', () => {
     expect((a1.value = null)).to.be.null();
     expect(a1.type).to.equal(Enums.ValueType.Null);
 
-    expect((a1.value = {json: 'data'})).to.deep.equal({json: 'data'});
+    expect((a1.value = { json: 'data' })).to.deep.equal({ json: 'data' });
     expect(a1.type).to.equal(Enums.ValueType.String);
   });
   it('validates options on construction', () => {
@@ -216,7 +216,7 @@ describe('Cell', () => {
     expect(a1.type).to.equal(Enums.ValueType.Hyperlink);
   });
 
-  it('doesn\'t upgrade from non-string to hyperlink', () => {
+  it("doesn't upgrade from non-string to hyperlink", () => {
     sheetMock.getRow(1);
     sheetMock.getColumn(1);
 
@@ -239,12 +239,12 @@ describe('Cell', () => {
     expect(a1.type).to.equal(Enums.ValueType.Date);
 
     // formula
-    a1.value = {formula: 'A2'};
+    a1.value = { formula: 'A2' };
     a1._upgradeToHyperlink(linkValue);
     expect(a1.type).to.equal(Enums.ValueType.Formula);
 
     // hyperlink
-    a1.value = {hyperlink: 'http://www.link2.com', text: 'www.link2.com'};
+    a1.value = { hyperlink: 'http://www.link2.com', text: 'www.link2.com' };
     a1._upgradeToHyperlink(linkValue);
     expect(a1.type).to.deep.equal(Enums.ValueType.Hyperlink);
 
@@ -297,15 +297,15 @@ describe('Cell', () => {
     expect(a1.type).to.equal(Enums.ValueType.Date);
     expect(a1.effectiveType).to.equal(Enums.ValueType.Date);
 
-    a1.value = {formula: 'A2', result: 5};
+    a1.value = { formula: 'A2', result: 5 };
     expect(a1.type).to.deep.equal(Enums.ValueType.Formula);
     expect(a1.effectiveType).to.equal(Enums.ValueType.Number);
 
-    a1.value = {formula: 'A2', result: 'Hello, World!'};
+    a1.value = { formula: 'A2', result: 'Hello, World!' };
     expect(a1.type).to.deep.equal(Enums.ValueType.Formula);
     expect(a1.effectiveType).to.equal(Enums.ValueType.String);
 
-    a1.value = {hyperlink: 'http://www.link.com', text: 'www.link.com'};
+    a1.value = { hyperlink: 'http://www.link.com', text: 'www.link.com' };
     expect(a1.type).to.deep.equal(Enums.ValueType.Hyperlink);
     expect(a1.effectiveType).to.equal(Enums.ValueType.Hyperlink);
   });
@@ -316,8 +316,8 @@ describe('Cell', () => {
     const c1 = sheetMock.getCell('C1');
 
     a1.value = 1;
-    b1.value = {formula: 'A1+1', result: 2};
-    c1.value = {sharedFormula: 'B1', result: 3};
+    b1.value = { formula: 'A1+1', result: 2 };
+    c1.value = { sharedFormula: 'B1', result: 3 };
 
     expect(b1.type).to.equal(Enums.ValueType.Formula);
     expect(b1.formulaType).to.equal(Enums.FormulaType.Master);
@@ -331,9 +331,7 @@ describe('Cell', () => {
 
     a1.value = '<script>alert("yoohoo")</script>';
 
-    expect(a1.html).to.equal(
-      '&lt;script&gt;alert(&quot;yoohoo&quot;)&lt;/script&gt;'
-    );
+    expect(a1.html).to.equal('&lt;script&gt;alert(&quot;yoohoo&quot;)&lt;/script&gt;');
   });
   it('can set comment', () => {
     const a1 = sheetMock.getCell('A1');
@@ -343,7 +341,7 @@ describe('Cell', () => {
         {
           font: {
             size: 12,
-            color: {theme: 0},
+            color: { theme: 0 },
             name: 'Calibri',
             family: 2,
             scheme: 'minor',
@@ -377,7 +375,7 @@ describe('Cell', () => {
         {
           font: {
             size: 12,
-            color: {theme: 0},
+            color: { theme: 0 },
             name: 'Calibri',
             family: 2,
             scheme: 'minor',
@@ -398,12 +396,7 @@ describe('Cell', () => {
     expect(a1.model.comment.note.texts).to.deep.equal(comment.texts);
     expect(a1.model.comment.note.protection).to.deep.equal(comment.protection);
     expect(a1.model.comment.note.margins.insetmode).to.equal('auto');
-    expect(a1.model.comment.note.margins.inset).to.deep.equal([
-      0.13,
-      0.13,
-      0.25,
-      0.25,
-    ]);
+    expect(a1.model.comment.note.margins.inset).to.deep.equal([0.13, 0.13, 0.25, 0.25]);
     expect(a1.model.comment.note.editAs).to.equal('absolute');
   });
 });

@@ -6,14 +6,12 @@ const workbook = new Workbook();
 workbook.xlsx
   .readFile(filename)
   .then(() => {
-    workbook.eachSheet(worksheet => {
+    workbook.eachSheet((worksheet) => {
       console.log(
-        `Sheet ${worksheet.id} - ${worksheet.name}, Dims=${JSON.stringify(
-          worksheet.dimensions
-        )}`
+        `Sheet ${worksheet.id} - ${worksheet.name}, Dims=${JSON.stringify(worksheet.dimensions)}`,
       );
     });
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(error.message);
   });

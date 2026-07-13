@@ -9,8 +9,8 @@ const expectations = [
       return new ColorScaleXform();
     },
     preparedModel: {
-      cfvo: [{type: 'min'}, {type: 'percentile', value: 50}, {type: 'max'}],
-      color: [{argb: 'FFFF0000'}, {argb: 'FF00FF00'}, {argb: 'FF0000FF'}],
+      cfvo: [{ type: 'min' }, { type: 'percentile', value: 50 }, { type: 'max' }],
+      color: [{ argb: 'FFFF0000' }, { argb: 'FF00FF00' }, { argb: 'FF0000FF' }],
     },
     xml: `
       <colorScale>

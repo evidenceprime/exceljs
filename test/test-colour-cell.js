@@ -11,31 +11,31 @@ const fills = {
   redDarkVertical: {
     type: 'pattern',
     pattern: 'darkVertical',
-    fgColor: {argb: 'FFFF0000'},
+    fgColor: { argb: 'FFFF0000' },
   },
   redGreenDarkTrellis: {
     type: 'pattern',
     pattern: 'darkTrellis',
-    fgColor: {argb: 'FFFF0000'},
-    bgColor: {argb: 'FF00FF00'},
+    fgColor: { argb: 'FFFF0000' },
+    bgColor: { argb: 'FF00FF00' },
   },
   blueWhiteHGrad: {
     type: 'gradient',
     gradient: 'angle',
     degree: 0,
     stops: [
-      {position: 0, color: {argb: 'FF0000FF'}},
-      {position: 1, color: {argb: 'FFFFFFFF'}},
+      { position: 0, color: { argb: 'FF0000FF' } },
+      { position: 1, color: { argb: 'FFFFFFFF' } },
     ],
   },
   rgbPathGrad: {
     type: 'gradient',
     gradient: 'path',
-    center: {left: 0.5, top: 0.5},
+    center: { left: 0.5, top: 0.5 },
     stops: [
-      {position: 0, color: {argb: 'FFFF0000'}},
-      {position: 0.5, color: {argb: 'FF00FF00'}},
-      {position: 1, color: {argb: 'FF0000FF'}},
+      { position: 0, color: { argb: 'FFFF0000' } },
+      { position: 0.5, color: { argb: 'FF00FF00' } },
+      { position: 1, color: { argb: 'FF0000FF' } },
     ],
   },
 };
@@ -56,6 +56,6 @@ wb.xlsx
     console.log('Done.');
     console.log('Time taken:', micros);
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(error.message);
   });
